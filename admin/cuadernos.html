@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papeleria Arte & Papel -Admin
+    </title>
+    <link rel="icon" href="../imagenes/logoP.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src="../imagenes/logoP.png" width="60px" height="60px" alt="" class="btn-sm col-xs-2 margin-left">
+        <a id="titulo" class="navbar-brand" href="inicio.html">PAPELERIA ARTE & PAPEL-ADMIN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="carpetas.html">Carpetas </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="escritura.html">Escritura</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="cuadernos.html">Cuadernos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="accesorios.html">Accesorios</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Actualizacion
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="actualizacion/actualizacionCarpetas.html">Carpetas</a>
+                        <a class="dropdown-item" href="actualizacion/actualizacionEscritura.html">Escritura</a>
+                        <a class="dropdown-item" href="actualizacion/actualizacionCuadernos.html">Cuadernos</a>
+                        <a class="dropdown-item" href="actualizacion/actualizacionAccesorios.html">Accesorios</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button type="button" class="btn btn-light" id="sesiónC" onclick="cerrar()">CERRAR SESIÓN</button>
+            </form>
+        </div>
+    </nav>
+    <!-- inicio del cuerpo -->
+    <hr>
+    <h1 id="titulo">REGISTRO DE CUADERNOS</h1>
+    <div id="borde">
+        <div class="container">
+            <form action=""><br>
+                <div class="row">
+                    <div class="col">
+                        <h4>REFERENCIA:</h4>
+                        <input type="text" class="form-control col-md-12" name="" id="referencia">
+                    </div><br>
+                    <div class="col">
+                        <h4>TIPO:</h4>
+                        <input type="text" class="form-control col-md-12" type="text" name="" id="tipo">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <h4>MARCA:</h4>
+                        <input type="text" class="form-control col-md-12" name="" id="marca">
+                    </div>
+                    <div class="col">
+                        <h4>MODELO:</h4>
+                        <input type="text" class="form-control col-md-12" name="" id="modelo">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <h4>COLOR:</h4>
+                        <input type="text" class="form-control col-md-12" name="" id="color">
+                    </div>
+                    <div class="col">
+                        <h4>TAMAÑO:</h4>
+                        <input type="text" class="form-control col-md-12" name="" id="tamanio">
+                    </div>
+                </div>
+                <div><br>
+                    <hr>
+                    <h4>IMAGEN DEL PRODUCTO:</h4>
+                    <input type="file" id="inputFileToLoad" class="form-control" placeholder="photo" />
+                    <i class="glyphicon glyphicon-fire form-control-feedback"></i><br>
+                    <input type="text" id="response" class="form-control" readonly="true" placeholder="Base-64 value" />
+                    <i class="glyphicon glyphicon-globe form-control-feedback"></i><br>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-dark " onclick="RegistrarCuadernos()">Registrar Producto</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </form><br>
+        </div>
+    </div>
+    <hr>
+    <!-- fin del cuerpo -->
+    <footer>
+        <h5 class="text-center">@copyright: ariel reyes</h5>
+
+    </footer>
+    <!--conexion a firebase-->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <!--  script para conexion y uso de firebase -->
+    <script src="../javascript/login.js"></script>
+    <script src="../javascript/conexion.js"></script>
+    <script src="../javascript/servicioAdmin.js"></script>
+    <!-- script de boostrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        //Convert Image to Base64
+        $(document).ready(function() {
+            $("#inputFileToLoad").change(function() {
+                var filesSelected = document.getElementById("inputFileToLoad").files;
+                if (filesSelected.length > 0) {
+                    var fileToLoad = filesSelected[0];
+                    var fileReader = new FileReader();
+                    fileReader.onload = function(fileLoadedEvent) {
+                        var base64value = fileLoadedEvent.target.result;
+                        console.log(base64value);
+                        $("#response").val(base64value);
+                    };
+                    fileReader.readAsDataURL(fileToLoad);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

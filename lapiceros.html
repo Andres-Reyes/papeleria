@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papeleria Arte & Papel</title>
+    <link rel="icon" href="imagenes/logoP.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src="imagenes/logoP.png" width="60px" height="60px" alt="" class="btn-sm col-xs-2 margin-left">
+        <a id="titulo" class="navbar-brand" href="index.html">PAPELERIA ARTE & PAPEL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link " href="carpetas.html">Carpetas <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="lapiceros.html">Escritura <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="cuadernos.html">Cuadernos <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="accesorios.html">Accesorios <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <button class="btn btn-outline-light btn-sm col-xs-2 margin-left">Carrito de Compras</button>
+            <form class="form-inline ">
+                <input class="form-control  col-xs-2 margin-left" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light btn-sm col-xs-2 margin-left" type="submit">Buscar</button>
+            </form><br>
+
+            <button type="button" class="btn btn-outline-light btn-sm col-xs-2 margin-left " data-toggle="modal" data-target="#exampleModal" id="inicioSesion">Ingresar</button>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <label><h5 class="modal-title" id="exampleModalLabel">INICIAR SESIÓN</h5></label>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                     </button>
+                    </div>
+                    <!--cuerpo del modal-->
+                    <div class="modal-body ">
+
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">CORREO ELECTRONICO</label><br>
+                                <input type="email" class="form-control" aria-describedby="emailHelp" id="email">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">CONTRASEÑA</label><br>
+                                <input class="form-control" type="password" id="password"><br>
+                            </div>
+                            <!--botones del modal-->
+                            <div class="modal-footer"><br>
+                                <button type="button" id="ingresar" onclick="signUp()" class="btn btn-dark" data-dismiss="modal">REGISTRAR</button>
+                                <button type="button" id="ingresar" onclick="signin()" class="btn btn-dark" data-dismiss="modal">INGRESAR</button>
+
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- inicio del cuerpo -->
+    <hr>
+    <!-- la tabla carpetas -->
+    <div class="container">
+        <div class="card-columns">
+            <div id="divCarpetas">
+
+            </div>
+        </div>
+    </div>
+    <!-- fin del cuerpo -->
+    <hr>
+    <footer>
+        <h5 class="text-center">@copyright: ariel reyes</h5>
+
+    </footer>
+    <!--conexion a firebase-->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <!--  script para conexion y uso de firebase -->
+    <script src="javascript/login.js"></script>
+    <script src="javascript/conexion.js"></script>
+    <!-- script de boostrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        var db = firebase.firestore();
+        var mostrarCarpeta = document.getElementById('divCarpetas');
+        db.collection("Escritura").onSnapshot((querySnapshot) => {
+            mostrarCarpeta.innerHTML = '';
+            querySnapshot.forEach((doc) => {
+                mostrarCarpeta.innerHTML +=
+                    `
+                    <div class="card">
+                <img src="${doc.data().siete}" class="card-img-top" alt="..." id="fotoCarpeta">
+               <div class="card-body">
+                <h5 class="card-title">R.F: ${doc.data().uno}</h5>
+                <p class="card-text">ESTILO: ${doc.data().dos}</p>
+                <p class="card-text">MARCA: ${doc.data().tres}</p>
+                <p class="card-text">MODELO: ${doc.data().cuatro}</p>
+                <p class="card-text">COLOR: ${doc.data().cinco}</p>
+                <p class="card-text"><small class="text-muted">TAMAÑO: ${doc.data().seis}</small></p>
+               </div>
+             </div>`;
+            });
+
+        });
+    </script>
+</body>
+
+</html>
